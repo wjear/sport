@@ -10,6 +10,8 @@ class SportModel extends Model
     use HasFactory;
     protected $table = 'sport';
 
+    public $timestamps = false;
+
     protected $appends = [
         'activity_type_name',
     ];
@@ -27,6 +29,29 @@ class SportModel extends Model
         }else{
             return '';
         }
+    }
+
+    public function getCreatetimeAttribute($value)
+    {
+        if($value)
+            return date('Y-m-d H:i:s',$value);
+    }
+
+    public function setCreatetimeAttribute($value)
+    {
+        $this->attributes['createtime'] = strtotime($value);
+    }
+
+    public function setUpdatetimeAttribute($value)
+    {
+        $this->attributes['updatetime'] = strtotime($value);
+    }
+
+
+    public function getUpdatetimeAttribute($value)
+    {
+        if($value)
+            return date('Y-m-d H:i:s',$value);
     }
 
 }
