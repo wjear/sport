@@ -135,6 +135,7 @@
                     {
                         name: title,
                         type: 'bar',
+                        barWidth:50,
                         color: ['#0099FF'],
                         data: num
                     }

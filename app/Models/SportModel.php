@@ -22,6 +22,13 @@ class SportModel extends Model
         2=>'adult football',
         3=>'junior football'
     ];
+
+    /**
+     * 获取活动类型名称
+     * @return mixed|string
+     * Author:WangJing
+     * Date:2023/5/24 22:21
+     */
     public function getActivityTypeNameAttribute()
     {
         if (isset($this->attributes['activity_type'])){
